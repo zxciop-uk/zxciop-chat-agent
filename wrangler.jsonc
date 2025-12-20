@@ -4,13 +4,16 @@
   "main": "src/server.ts",
   "compatibility_date": "2025-08-03",
   "compatibility_flags": ["nodejs_compat"],
+
   "ai": {
     "binding": "AI",
     "remote": true
   },
+
   "assets": {
     "directory": "public"
   },
+
   "durable_objects": {
     "bindings": [
       {
@@ -19,10 +22,20 @@
       }
     ]
   },
+
   "migrations": [
     {
       "tag": "v1",
       "new_sqlite_classes": ["Chat"]
     }
-  ]
+  ],
+
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    }
+  }
 }
